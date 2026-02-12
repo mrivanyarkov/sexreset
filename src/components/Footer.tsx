@@ -1,4 +1,5 @@
 import { Send } from 'lucide-react';
+import logoImg from "figma:asset/b198e49ff25fa00ceeac05bb04a1e5c19f2f6b3d.png";
 
 export function Footer() {
   return (
@@ -23,8 +24,10 @@ export function Footer() {
         </div>
 
         <div className="text-center pt-8 border-t border-slate-800/50">
-          <div className="text-4xl mb-4">🌹</div>
-          <p className="text-slate-400 mb-2">Сексуальная Перезагрузка</p>
+          <div className="mb-4 flex justify-center">
+            <img src={logoImg} alt="Интимная Перезагрузка" className="h-16 w-16 object-cover rounded-full shadow-lg shadow-rose-500/30" />
+          </div>
+          <p className="text-slate-400 mb-2">Интимная Перезагрузка</p>
           <p className="text-slate-500 text-sm">6–9 марта | Сочи</p>
         </div>
       </div>

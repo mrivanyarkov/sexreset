@@ -1,9 +1,13 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Heart, Camera, Ship, Utensils, Sparkles } from 'lucide-react';
+import imgBoudoir1 from "figma:asset/770b8fbc52ec8556e20fe9500d4fbc2d682f5fa0.png";
+import imgBoudoir2 from "figma:asset/fb489f77da332406e5195d0ee8ee675484be9e16.png";
+import imgBoudoir3 from "figma:asset/33a6d54d4d25931ae40e77c81d0f857d5d332fcf.png";
 
 export function Program() {
   const practices = [
-    'Колесо сексуального баланса',
+    'Расслабляющий индивидуальный массаж',
+    'Даосская сексуальная зарядка',
     'Распаковка сексуальности',
     'Блоки и страхи во время секса',
     'Телесная практика пробуждения эрогенных зон',
@@ -21,7 +25,8 @@ export function Program() {
     {
       icon: Camera,
       text: 'Будуарная фотосессия с топовым ню-фотографом',
-      image: 'https://images.unsplash.com/photo-1678723357379-d87f2a0ec8ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwd29tYW4lMjBwb3J0cmFpdCUyMHJlZCUyMGJhY2tkcm9wfGVufDF8fHx8MTc3MDgwNTg5NHww&ixlib=rb-4.1.0&q=80&w=1080'
+      images: [imgBoudoir1, imgBoudoir2, imgBoudoir3],
+      isCollage: true
     },
     {
       icon: Ship,
@@ -78,12 +83,32 @@ export function Program() {
               className="relative overflow-hidden rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:border-rose-500/50 transition-all duration-300"
             >
               <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-64 md:h-auto">
-                  <ImageWithFallback
-                    src={highlight.image}
-                    alt={highlight.text}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative h-64 md:h-auto min-h-[400px]">
+                  {highlight.isCollage ? (
+                    <div className="grid grid-cols-2 gap-2 h-full p-2">
+                      <img
+                        src={highlight.images[0]}
+                        alt={highlight.text}
+                        className="w-full h-full object-cover rounded-lg col-span-2"
+                      />
+                      <img
+                        src={highlight.images[1]}
+                        alt={highlight.text}
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                      <img
+                        src={highlight.images[2]}
+                        alt={highlight.text}
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                    </div>
+                  ) : (
+                    <ImageWithFallback
+                      src={highlight.image}
+                      alt={highlight.text}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-transparent"></div>
                 </div>
                 <div className="p-8 flex items-center">

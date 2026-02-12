@@ -1,6 +1,13 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Building2, Armchair, Mountain, Utensils, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  Building2,
+  Armchair,
+  Mountain,
+  Utensils,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { useState } from "react";
 import imgPenthouse1 from "figma:asset/b04e7685f583e27f9442ec8e174a3e8c5da57dc8.png";
 import imgPenthouse2 from "figma:asset/efdeff4a6d9cc6d699e50dc3d726a38890dc324e.png";
 import imgPenthouse3 from "figma:asset/685f29d7e16d1c96863c4f19b40c79c53de185c8.png";
@@ -18,61 +25,61 @@ export function Space() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const features = [
-    { icon: Armchair, text: 'Просторная гостиная для практик' },
-    { icon: Building2, text: 'Эстетичные спальни' },
-    { icon: Mountain, text: 'Терраса' },
-    { icon: Utensils, text: '4-разовое фитнес-питание' }
+    { icon: Armchair, text: "Просторная гостиная для практик" },
+    { icon: Building2, text: "Эстетичные спальни" },
+    { icon: Mountain, text: "Терраса" },
+    { icon: Utensils, text: "4-разовое фитнес-питание" },
   ];
 
   const images = [
     {
-      url: imgPenthouse1,
-      alt: 'Панорамный вид пентхауса'
-    },
-    {
-      url: imgPenthouse2,
-      alt: 'Панорамные окна с видом на море'
-    },
-    {
-      url: imgPenthouse3,
-      alt: 'Роскошный интерьер пентхауса'
-    },
-    {
-      url: imgPenthouse4,
-      alt: 'Бассейн с видом на город'
-    },
-    {
-      url: imgPenthouse9,
-      alt: 'Роскошный интерьер с видом на море'
+      url: imgPenthouse16,
+      alt: "Просторная терраса",
     },
     {
       url: imgPenthouse10,
-      alt: 'Элегантная гостиная'
-    },
-    {
-      url: imgPenthouse11,
-      alt: 'Дизайнерская спальня'
-    },
-    {
-      url: imgPenthouse12,
-      alt: 'Бассейн на террасе'
-    },
-    {
-      url: imgPenthouse13,
-      alt: 'Вид на горы и море'
-    },
-    {
-      url: imgPenthouse14,
-      alt: 'Современная кухня'
+      alt: "Элегантная гостиная",
     },
     {
       url: imgPenthouse15,
-      alt: 'Стильная гостиная зона'
+      alt: "Стильная гостиная зона",
     },
     {
-      url: imgPenthouse16,
-      alt: 'Просторная терраса'
-    }
+      url: imgPenthouse11,
+      alt: "Дизайнерская спальня",
+    },
+    {
+      url: imgPenthouse14,
+      alt: "Современная кухня",
+    },
+    {
+      url: imgPenthouse9,
+      alt: "Роскошный интерьер с видом на море",
+    },
+    {
+      url: imgPenthouse2,
+      alt: "Панорамные окна с видом на море",
+    },
+    {
+      url: imgPenthouse1,
+      alt: "Панорамный вид пентхауса",
+    },
+    {
+      url: imgPenthouse12,
+      alt: "Бассейн на террасе",
+    },
+    {
+      url: imgPenthouse4,
+      alt: "Бассейн с видом на город",
+    },
+    {
+      url: imgPenthouse13,
+      alt: "Вид на горы и море",
+    },
+    {
+      url: imgPenthouse3,
+      alt: "Роскошный интерьер пентхауса",
+    },
   ];
 
   const nextSlide = () => {
@@ -80,7 +87,9 @@ export function Space() {
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + images.length) % images.length,
+    );
   };
 
   const goToSlide = (index: number) => {
@@ -95,7 +104,8 @@ export function Space() {
             Пространство
           </h2>
           <p className="text-2xl text-rose-300 mb-4">
-            Роскошный пентхаус на 18 этаже с панорамным видом на море
+            Роскошный пентхаус на 18 этаже с панорамным видом на
+            море
           </p>
         </div>
 
@@ -103,9 +113,11 @@ export function Space() {
         <div className="mb-16 relative">
           {/* Main Carousel */}
           <div className="relative overflow-hidden rounded-2xl">
-            <div 
+            <div
               className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{
+                transform: `translateX(-${currentIndex * 100}%)`,
+              }}
             >
               {images.map((image, index) => (
                 <div key={index} className="min-w-full">
@@ -150,9 +162,9 @@ export function Space() {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-rose-500 w-8' 
-                    : 'bg-rose-300/50 hover:bg-rose-300'
+                  index === currentIndex
+                    ? "bg-rose-500 w-8"
+                    : "bg-rose-300/50 hover:bg-rose-300"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -163,22 +175,28 @@ export function Space() {
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={index}
               className="flex items-center gap-4 p-6 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50"
             >
               <feature.icon className="w-8 h-8 text-rose-400 flex-shrink-0" />
-              <p className="text-lg text-slate-200">{feature.text}</p>
+              <p className="text-lg text-slate-200">
+                {feature.text}
+              </p>
             </div>
           ))}
         </div>
 
         <div className="p-8 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 text-center">
-          <p className="text-slate-300 mb-2">Атмосфера приватности</p>
+          <p className="text-slate-300 mb-2">
+            Атмосфера приватности
+          </p>
           <p className="text-xl text-white font-serif mb-4">
             Здесь всё уже продумано за тебя.
           </p>
-          <p className="text-rose-300 text-lg">Тебе остаётся только расслабиться.</p>
+          <p className="text-rose-300 text-lg">
+            Тебе остаётся только расслабиться.
+          </p>
         </div>
       </div>
     </section>

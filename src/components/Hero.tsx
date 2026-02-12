@@ -1,5 +1,6 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import imgPenthouse from "figma:asset/b04e7685f583e27f9442ec8e174a3e8c5da57dc8.png";
+import logoImg from "figma:asset/b198e49ff25fa00ceeac05bb04a1e5c19f2f6b3d.png";
 
 export function Hero() {
   return (
@@ -17,9 +18,11 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <div className="text-6xl mb-6 animate-pulse">🌹</div>
+          <div className="mb-6 flex justify-center">
+            <img src={logoImg} alt="Интимная Перезагрузка" className="h-24 w-24 object-cover rounded-full shadow-2xl shadow-rose-500/50 animate-pulse" />
+          </div>
           <h1 className="text-5xl md:text-7xl font-serif mb-6 bg-gradient-to-r from-rose-300 via-pink-200 to-rose-300 bg-clip-text text-transparent">
-            Сексуальная Перезагрузка
+            Интимная Перезагрузка
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 mb-4">
             Закрытый женский ретрит в роскошном пентхаусе в Сочи
